@@ -1,3 +1,4 @@
+//Colors
 .color--purple-heather {
     background-color: $color-purple-heather;
     color: $color-purple-heather;
@@ -43,7 +44,7 @@
     color: transparent;
 }
 
-
+//Text colors
 .text-color--purple-heather {
     color: $color-purple-heather;
 }
@@ -80,6 +81,7 @@
     color: $color-bg-secondary;
 }
 
+//Headings
 .h-xl {
     font-size: $font-size-xl;
     font-weight: 800;
@@ -104,6 +106,23 @@
     line-height: 28px;
 }
 
+//Paragraphs
+.p {
+    &-m {
+        font-size: $font-size-p-m;
+        font-weight: 500;
+        line-height: 28px;
+        color: $color-gray-smoke;
+    }
+
+    &-s {
+        font-size: $font-size-p-s;
+        font-weight: 700;
+        line-height: 28px;
+        color: $color-gray-smoke;
+    }
+    
+}
 
 //Buttons
 .btn {
@@ -113,40 +132,54 @@
     text-decoration: none;
 
     max-width: fit-content;
-}
 
-.btn-primary {
-    background-color: $color-blue-midnight;
-    color: $color-white;
-    border: 1px solid $color-blue-midnight;
-
-    &:hover {
-        background-color: $color-purple-heather;
-        border: 1px solid $color-purple-heather;
+    &-primary {
+        background-color: $color-blue-midnight;
         color: $color-white;
+        border: 1px solid $color-blue-midnight;
+    
+        &:hover {
+            background-color: $color-purple-heather;
+            border: 1px solid $color-purple-heather;
+            color: $color-white;
+        }
+    }
+
+    &-secondary {
+        background: $color-bg-primary;
+        color: $color-white;
+        border: 1px solid $color-bg-primary;
+    
+        &:hover {
+            background: $color-bg-primary-soft;
+            border: 1px solid $color-bg-secondary-soft;
+            color: $color-white;
+        }
+    }
+
+    &-tertiary {
+        background: $color-bg-secondary;
+        color: $color-white;
+        border: 1px solid $color-bg-secondary;
+    
+        &:hover {
+            background: $color-bg-secondary-soft;
+            border: 1px solid $color-bg-secondary-soft;
+            color: $color-white;
+        }
     }
 }
 
-.btn-secondary {
-    background: $color-bg-primary;
-    color: $color-white;
-    border: 1px solid $color-bg-primary;
-    
-    &:hover {
-        background: $color-bg-primary-soft;
-        border: 1px solid $color-bg-secondary-soft;
-        color: $color-white;
+.txt {
+    &-center {
+        text-align: center;
     }
-}
 
-.btn-tertiary {
-    background: $color-bg-secondary;
-    color: $color-white;
-    border: 1px solid $color-bg-secondary;
-    
-    &:hover {
-        background: $color-bg-secondary-soft;
-        border: 1px solid $color-bg-secondary-soft;
-        color: $color-white;
+    &-right {
+        text-align: right;
+    }
+
+    &-left {
+        text-align: left;
     }
 }

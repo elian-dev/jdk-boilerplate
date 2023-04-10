@@ -1,0 +1,33 @@
+---
+export interface Props {
+    main: boolean;
+    title: string;
+    img: string;
+    className?: string;
+}
+
+const { title, main, img, className } = Astro.props;
+---
+
+<div class={main ? `courses-card courses-card--main ${className}` : `courses-card  ${className}`}>
+    <div class="courses-card__inner">
+        
+        {
+            main ? (
+                <div class="courses-card--main-content">
+                    <slot />
+                </div>
+            ) : (
+            <div class="courses-card__image">
+                <img src={img} alt={title}>
+            </div>
+
+            <div class="courses-card__content">
+                <h3 class="courses-card__title h-s">{title}</h3>
+                <slot />
+            </div>
+            )
+        }
+
+    </div>
+</div>
