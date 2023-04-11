@@ -1,21 +1,14 @@
 .hero {
     width: 100%;
+    max-width: $max-width;
     margin: auto;
     padding: 0 5%;
-    @media screen and (min-width: 768px) {
-        max-width: 1110px;
-    }
     &__inner {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
         gap: 1rem;
-
-        @media screen and (max-width: 768px) {
-            flex-direction: column;
-        }
-
     }
     &__content {
         display: flex;
@@ -23,42 +16,128 @@
         justify-content: flex-start;
         align-items: flex-start;
         padding: 4rem 4rem 4rem 0;
-        width: 50%;
+        width: 100%;
 
-        @media screen and (max-width: 768px) {
-            width: 100%;
+        @include media('tablet') {
+            width: 75%;
+        }
+
+        @include media('desktop') {
+            width: 60%;
         }
 
     }
     &__img {
-        width: calc(100vw - 5%);
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        left: 50%;
 
-        img {
-            max-width: 100%;
+        @include media('desktop') {
+            top: 0;
+        }
+    }
+    .rectangle {
+        position: absolute;
+        width: 317px;
+        height: 1008px;
+        background: $color-bg-secondary;
+        border-radius: 170px;
+        transform: rotate(45deg);
+
+        position: relative;
+        top: 0px;
+        right: 0px;
+    
+        @include media('mobile') {
+            display: none;
         }
 
-        @media screen and (min-width: 768px) {
-            position: absolute;
+        @include media('tablet') {
+            width: 200px;
+            height: 650px;
+            top: -200px;
+            right: -300px;
+        }
+
+        @include media('desktop') {
+            top: -99px;
+            right: -446px;
+        }
+
+    }
+    .rectangle2 {
+        width: 200px;
+        height: 340px;
+        background: $color-bg-primary;
+        position: absolute;
+        top: 6%;
+        left: 36%;
+        border-radius: 170px;
+
+        @include media('desktop') {
+            width: 200px;
+            height: 400px;
+            top: 10%;
+            left: 40%;
+        }
+
+        @include media('mobile') {
+            display: none;
+        }
+        img {
             width: 100%;
+            object-fit: cover;
+            border-radius: 170px;
             height: 100%;
-            left: 0;
-            bottom: 0;
+        }
+    }
 
-            img {
-                width: 50%;
-                height: auto;
-                max-height: 900px;
-    
-                position: relative;
-                left: 60%;
-                transform: translateX(-19%);
-                top: 13%;
-                z-index: 2;
+    .counter {
+        width: fit-content;
+        background-color: $color-white;
+        padding: 1rem;
+        border-radius: 10px;
+        position: absolute;
+        box-shadow: 0px 34px 54px rgba(6, 22, 141, 0.158854);
+        p {
+            margin: 0;
+            text-align: center;
+        }
+        &--1 {
+            top: 0%;
+            left: 70%;
+        }
+        &--2 {
+            top: 0%;
+            left: 10%;
+        }
 
-                @media screen and (min-width: 768px) {
-                    top: 6%;
-                }
+        @include media('tablet') {
+            &--1 {
+                top: 2%;
+                left: 72%;
             }
+            &--2 {
+                top: 40%;
+                left: 30%;
+            }
+        }
+
+        @include media('desktop') {
+            &--1 {
+                top: 15%;
+                left: 65%;
+            }
+            &--2 {
+                top: 42%;
+                left: 30%;
+            }
+        }
+
+        @include media('mobile') {
+            display: none;
         }
     }
 }

@@ -1,4 +1,12 @@
-<div class="hero">
+---
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="hero">
     <div class="hero__inner">
         <div class="hero__content">
             <h1 class="hero__title h-xl">Maximize skill,
@@ -7,14 +15,28 @@
             <a href="#" class="btn btn-secondary">Get Started</a>
         </div>
         <div class="hero__img">
-
-            <picture>
-                <source srcset="/images/image-hero-desktop.png" media="(min-width: 1024px)">
-                <source srcset="/images/image-hero-tablet.png" media="(min-width: 768px)">
-                <source srcset="/images/image-hero-mobile.png" media="(min-width: 320px)">
+            <!-- <picture>
+                <source srcset="/images/image-hero-desktop.png" media="(min-width: 64rem)">
+                <source srcset="/images/image-hero-tablet.png" media="(min-width: 48rem)">
+                <source srcset="/images/image-hero-mobile.png" media="(min-width: 20rem)">
                 <img src="/images/image-hero-desktop.png" alt="Hero Image">
-            </picture>
+            </picture> -->
+
+            <div class="rectangle"></div>
+            <div class="rectangle2">
+                <img src="/images/image-mask.png" alt="image hero">
+            </div>
+
+            <div class="counter counter--1">
+                <p class="p-s">Members</p>
+                <p class="h-s">29k</p>
+            </div>
+
+            <div class="counter counter--2">
+                <p class="p-s">Course hours</p>
+                <p class="h-s">1451</p>
+            </div>
 
         </div>
     </div>
-</div>
+</section>

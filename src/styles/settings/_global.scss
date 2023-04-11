@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -69,6 +73,7 @@ h2, h3, h4, h5, h6 {
 
 .content {
   width: 100%;
+  max-width: $max-width;
   display: flex;
   flex-direction: column;
   gap: 2rem;

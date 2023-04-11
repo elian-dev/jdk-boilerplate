@@ -2,11 +2,12 @@
 export interface Props {
     main: boolean;
     title: string;
-    img: string;
+    imgSrc: string;
+    imgAlt: string;
     className?: string;
 }
 
-const { title, main, img, className } = Astro.props;
+const { title, main, imgSrc, imgAlt, className } = Astro.props;
 ---
 
 <div class={main ? `courses-card courses-card--main ${className}` : `courses-card  ${className}`}>
@@ -19,7 +20,7 @@ const { title, main, img, className } = Astro.props;
                 </div>
             ) : (
             <div class="courses-card__image">
-                <img src={img} alt={title}>
+                <img src={imgSrc} alt={imgAlt}>
             </div>
 
             <div class="courses-card__content">
